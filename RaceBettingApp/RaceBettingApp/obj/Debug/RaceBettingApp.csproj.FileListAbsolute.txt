@@ -1,0 +1,10 @@
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\bin\Debug\RaceBettingApp.exe.config
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\bin\Debug\RaceBettingApp.exe
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\bin\Debug\RaceBettingApp.pdb
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\obj\Debug\RaceBettingApp.csprojAssemblyReference.cache
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\obj\Debug\RaceBettingApp.Form1.resources
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\obj\Debug\RaceBettingApp.Properties.Resources.resources
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\obj\Debug\RaceBettingApp.csproj.GenerateResource.cache
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\obj\Debug\RaceBettingApp.csproj.CoreCompileInputs.cache
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\obj\Debug\RaceBettingApp.exe
+\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\RaceBettingApp\obj\Debug\RaceBettingApp.pdb

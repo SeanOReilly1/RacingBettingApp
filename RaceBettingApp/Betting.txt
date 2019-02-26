@@ -1,0 +1,6 @@
+Carlow, 19/02/2019 00:00:00, 14, True
+London, 21/02/2019 00:00:00, 31, False
+London, 11/02/2019 00:00:00, 30, False
+Wolverhampton, 10/02/2019 00:00:00, 40, True
+Liverpool, 28/01/2019 00:00:00, 23, True
+Aintree, 23/02/2019 00:00:00, 123, False
