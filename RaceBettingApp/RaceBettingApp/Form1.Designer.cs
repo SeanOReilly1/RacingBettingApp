@@ -44,6 +44,7 @@
             this.btnAmmountWon = new System.Windows.Forms.Button();
             this.btnPopularCourse = new System.Windows.Forms.Button();
             this.btnViewAllTracks = new System.Windows.Forms.Button();
+            this.btnGetOldData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorseBets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,11 +193,22 @@
             this.btnViewAllTracks.UseVisualStyleBackColor = true;
             this.btnViewAllTracks.Click += new System.EventHandler(this.btnViewAllTracks_Click);
             // 
+            // btnGetOldData
+            // 
+            this.btnGetOldData.Location = new System.Drawing.Point(377, 293);
+            this.btnGetOldData.Name = "btnGetOldData";
+            this.btnGetOldData.Size = new System.Drawing.Size(173, 38);
+            this.btnGetOldData.TabIndex = 18;
+            this.btnGetOldData.Text = "Get Old Data Override";
+            this.btnGetOldData.UseVisualStyleBackColor = true;
+            this.btnGetOldData.Click += new System.EventHandler(this.btnGetOldData_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 517);
+            this.Controls.Add(this.btnGetOldData);
             this.Controls.Add(this.btnViewAllTracks);
             this.Controls.Add(this.btnPopularCourse);
             this.Controls.Add(this.btnAmmountWon);
@@ -239,6 +251,7 @@
         private System.Windows.Forms.Button btnAmmountWon;
         private System.Windows.Forms.Button btnPopularCourse;
         private System.Windows.Forms.Button btnViewAllTracks;
+        private System.Windows.Forms.Button btnGetOldData;
     }
 }
 

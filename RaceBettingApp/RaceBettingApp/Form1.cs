@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace RaceBettingApp
 {
     public partial class Form1 : Form
@@ -16,7 +17,8 @@ namespace RaceBettingApp
         string File = @"\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\New.txt";
         
         List<Races> ListOfRaces;
-       // private ListOfRaces RaceList = new ListOfRaces();
+        ListOfRaces HardCodedRaces;
+        // private ListOfRaces RaceList = new ListOfRaces();
 
         public Form1()
         {
@@ -182,6 +184,64 @@ namespace RaceBettingApp
            // rtbRead.AppendText($"Race courses " + reportSet + Environment.NewLine);
             dgvHorseBets.DataSource = reportSet.ToList();
         }
+
+        private void btnGetOldData_Click(object sender, EventArgs e)
+        {
+            string message = "This has overriden races with hard coded data";
+            MessageBox.Show(message);
+
+            HardCodedRaces = new ListOfRaces()
+            {
+                new Races { RaceName = "Aintree", Date = new DateTime(2017, 05, 12), Length = 11.58m, Result = true },
+                new Races { RaceName = "Punchestown", Date = new DateTime(2016, 12, 22),Length = 122.52m, Result = true },
+                 new Races { RaceName =  "Sandown", Date = new DateTime (2016, 11, 17), Length = 20.00m, Result = false },
+                 new Races { RaceName = "Ayr", Date = new DateTime(2016, 11, 03), Length = 25.00m, Result = false },
+                 new Races { RaceName = "Fairyhouse", Date = new DateTime (2016, 12, 02), Length = 65.75m, Result =  true },
+                 new Races { RaceName = "Ayr", Date =  new DateTime(2017,03, 11), Length = 12.05m, Result = true },
+                 new Races { RaceName = "Doncaster", Date = new DateTime(2017, 12, 02), Length = 10.00m, Result = false },
+                 new Races { RaceName = "Towcester", Date = new DateTime(2016, 03, 12), Length =  50.00m, Result = false },
+                 new Races { RaceName = "Goodwood" , Date = new DateTime(2017, 10, 07), Length =  525.74m, Result =  true },
+                 new Races { RaceName = "Kelso", Date = new DateTime(2016, 09, 13), Length = 43.21m, Result = true },
+                 new Races { RaceName = "Punchestown", Date = new DateTime(2017, 07, 05), Length = 35.00m, Result = false },
+                 new Races { RaceName = "Ascot", Date = new DateTime(2016, 02, 04), Length = 23.65m, Result = true },
+                 new Races { RaceName = "Kelso",  Date = new DateTime(2017, 08, 02), Length = 30.00m, Result = false },
+                 new Races { RaceName = "Towcester", Date = new DateTime(2017, 05, 01), Length = 104.33m, Result = true },
+                 new Races { RaceName =  "Ascot",  Date=  new DateTime(2017, 06, 21), Length = 25.00m, Result =  false },
+                 new Races { RaceName = "Bangor", Date = new DateTime(2016, 12, 22), Length = 30.00m, Result =  false },
+                 new Races { RaceName = "Ayr", Date = new DateTime(2017, 05, 22), Length = 11.50m, Result = true },
+                 new Races { RaceName = "Ascot", Date = new DateTime(2017, 06, 23), Length = 30.00m, Result = false },
+                 new Races { RaceName = "Ascot", Date = new  DateTime(2017, 06, 23), Length = 374.27m, Result = true },
+                 new Races { RaceName = "Goodwood", Date = new DateTime(2016, 10, 05), Length = 34.12m, Result = true },
+                 new Races { RaceName = "Dundalk", Date = new DateTime(2016, 11, 09), Length = 20.00m, Result = false },
+                 new Races { RaceName = "Haydock", Date = new DateTime(2016, 11, 12), Length = 87.00m, Result = true },
+                 new Races { RaceName = "Perth", Date = new DateTime(2017, 01, 20), Length = 15.00m, Result = false },
+                 new Races { RaceName = "York", Date = new DateTime(2017, 11, 11), Length = 101.25m, Result = true },
+                 new Races { RaceName = "Punchestown", Date = new DateTime(2016, 12, 22), Length = 11.50m, Result = true },
+                 new Races { RaceName = "Chester", Date = new DateTime(2016, 08, 14), Length =  10.00m, Result =  false },
+                 new Races { RaceName = "Kelso", Date = new DateTime(2016, 09, 18),  Length = 10.00m, Result =  false },
+                 new Races { RaceName = "Kilbeggan",  Date = new DateTime(2017, 03, 03), Length = 20.00m, Result = false },
+                 new Races { RaceName = "Fairyhouse", Date = new DateTime(2017, 03, 11), Length = 55.50m, Result = true },
+                 new Races { RaceName = "Punchestown", Date = new DateTime(2016, 11, 15), Length =  10.00m, Result = false },
+                 new Races { RaceName = "Towcester", Date = new DateTime(2016, 05, 08), Length = 16.55m, Result = true },
+                 new Races { RaceName = "Punchestown", Date = new DateTime(2016, 05, 23), Length = 13.71m, Result = true },
+                 new Races { RaceName = "Cork", Date = new DateTime(2016, 11, 30), Length = 20.00m, Result = false },
+                 new Races { RaceName = "Punchestown", Date = new DateTime(2016, 04, 25), Length = 13.45m, Result = true },
+                 new Races { RaceName = "Bangor", Date = new DateTime(2016, 01, 23), Length = 10.00m, Result = false },
+                 new Races { RaceName = "Sandown", Date = new DateTime(2017, 08, 07), Length = 25.00m, Result = false }
+            };
+
+            using (StreamWriter br = new StreamWriter(File))
+            {
+
+                foreach (var race in HardCodedRaces)
+                {
+                    br.WriteLine($"{race.RaceName},{race.Date.ToShortDateString()},{race.Length},{race.Result}");
+
+                }
+
+            }
+        }
+        
     }
 }
  
