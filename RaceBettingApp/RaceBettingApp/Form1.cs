@@ -138,12 +138,13 @@ namespace RaceBettingApp
         private void btnAmmountWon_Click(object sender, EventArgs e)
         {
             rtbRead.Clear();
-            var wonCount = ListOfRaces.Count(r => r.Result == true);
-            decimal winning = wonCount/ListOfRaces.Count() *100m;
-            decimal percentage = winning * 100m;
+            
+            var winners = ListOfRaces.Where(race => race.Result == true).Count();
+            var winning = (decimal)winners/ListOfRaces.Count();
+            var percentage = winning * 100;
 
             rtbRead.AppendText($"The total number of races tipped is {ListOfRaces.Count()}." + Environment.NewLine);
-            rtbRead.AppendText($"The total number of wins for races tipped is {wonCount}." + Environment.NewLine);
+            rtbRead.AppendText($"The total number of wins for races tipped is {winners}." + Environment.NewLine);
             rtbRead.AppendText($"Percentage success is {percentage} %." + Environment.NewLine);
 
 
@@ -241,7 +242,21 @@ namespace RaceBettingApp
 
             }
         }
-        
+
+        private void btnMostWonLost_Click(object sender, EventArgs e)
+        {
+            var MostMoneyWon = ListOfRaces
+                                     .Where(race => race.Result == true).OrderByDescending(l => l.Length)
+                                     .Select(r => r.RaceName).First();
+
+            var MostMoneyLost = ListOfRaces
+                            .Where(race => race.Result == false).OrderByDescending(l => l.Length)
+                            .Select(r => r.RaceName).First();
+
+            rtbRead.AppendText($"Most money won was at {MostMoneyWon}");
+            rtbRead.AppendText($"Most money lost was at{MostMoneyLost}");
+
+        }
     }
 }
  

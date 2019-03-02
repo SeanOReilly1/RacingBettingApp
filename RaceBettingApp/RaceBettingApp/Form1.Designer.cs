@@ -45,6 +45,7 @@
             this.btnPopularCourse = new System.Windows.Forms.Button();
             this.btnViewAllTracks = new System.Windows.Forms.Button();
             this.btnGetOldData = new System.Windows.Forms.Button();
+            this.btnMostWonLost = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorseBets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,9 +119,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(52, 267);
+            this.btnAdd.Location = new System.Drawing.Point(52, 257);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(93, 33);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -128,9 +129,9 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(172, 266);
+            this.btnRead.Location = new System.Drawing.Point(151, 257);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(75, 23);
+            this.btnRead.Size = new System.Drawing.Size(76, 32);
             this.btnRead.TabIndex = 11;
             this.btnRead.Text = "Read";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -155,9 +156,9 @@
             // 
             // btnSortDate
             // 
-            this.btnSortDate.Location = new System.Drawing.Point(52, 308);
+            this.btnSortDate.Location = new System.Drawing.Point(52, 296);
             this.btnSortDate.Name = "btnSortDate";
-            this.btnSortDate.Size = new System.Drawing.Size(75, 23);
+            this.btnSortDate.Size = new System.Drawing.Size(123, 35);
             this.btnSortDate.TabIndex = 14;
             this.btnSortDate.Text = "Sort By Date";
             this.btnSortDate.UseVisualStyleBackColor = true;
@@ -165,7 +166,7 @@
             // 
             // btnAmmountWon
             // 
-            this.btnAmmountWon.Location = new System.Drawing.Point(446, 160);
+            this.btnAmmountWon.Location = new System.Drawing.Point(422, 160);
             this.btnAmmountWon.Name = "btnAmmountWon";
             this.btnAmmountWon.Size = new System.Drawing.Size(104, 35);
             this.btnAmmountWon.TabIndex = 15;
@@ -175,7 +176,7 @@
             // 
             // btnPopularCourse
             // 
-            this.btnPopularCourse.Location = new System.Drawing.Point(575, 160);
+            this.btnPopularCourse.Location = new System.Drawing.Point(542, 160);
             this.btnPopularCourse.Name = "btnPopularCourse";
             this.btnPopularCourse.Size = new System.Drawing.Size(124, 35);
             this.btnPopularCourse.TabIndex = 16;
@@ -185,17 +186,17 @@
             // 
             // btnViewAllTracks
             // 
-            this.btnViewAllTracks.Location = new System.Drawing.Point(172, 308);
+            this.btnViewAllTracks.Location = new System.Drawing.Point(181, 296);
             this.btnViewAllTracks.Name = "btnViewAllTracks";
-            this.btnViewAllTracks.Size = new System.Drawing.Size(130, 23);
+            this.btnViewAllTracks.Size = new System.Drawing.Size(167, 35);
             this.btnViewAllTracks.TabIndex = 17;
-            this.btnViewAllTracks.Text = "Order Tracks";
+            this.btnViewAllTracks.Text = "Order Alphabetically";
             this.btnViewAllTracks.UseVisualStyleBackColor = true;
             this.btnViewAllTracks.Click += new System.EventHandler(this.btnViewAllTracks_Click);
             // 
             // btnGetOldData
             // 
-            this.btnGetOldData.Location = new System.Drawing.Point(377, 293);
+            this.btnGetOldData.Location = new System.Drawing.Point(676, 293);
             this.btnGetOldData.Name = "btnGetOldData";
             this.btnGetOldData.Size = new System.Drawing.Size(173, 38);
             this.btnGetOldData.TabIndex = 18;
@@ -203,11 +204,22 @@
             this.btnGetOldData.UseVisualStyleBackColor = true;
             this.btnGetOldData.Click += new System.EventHandler(this.btnGetOldData_Click);
             // 
+            // btnMostWonLost
+            // 
+            this.btnMostWonLost.Location = new System.Drawing.Point(681, 160);
+            this.btnMostWonLost.Name = "btnMostWonLost";
+            this.btnMostWonLost.Size = new System.Drawing.Size(115, 35);
+            this.btnMostWonLost.TabIndex = 19;
+            this.btnMostWonLost.Text = "Most Won/Lost";
+            this.btnMostWonLost.UseVisualStyleBackColor = true;
+            this.btnMostWonLost.Click += new System.EventHandler(this.btnMostWonLost_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 517);
+            this.Controls.Add(this.btnMostWonLost);
             this.Controls.Add(this.btnGetOldData);
             this.Controls.Add(this.btnViewAllTracks);
             this.Controls.Add(this.btnPopularCourse);
@@ -252,6 +264,7 @@
         private System.Windows.Forms.Button btnPopularCourse;
         private System.Windows.Forms.Button btnViewAllTracks;
         private System.Windows.Forms.Button btnGetOldData;
+        private System.Windows.Forms.Button btnMostWonLost;
     }
 }
 
