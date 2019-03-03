@@ -208,7 +208,7 @@
             // 
             this.btnMostWonLost.Location = new System.Drawing.Point(681, 160);
             this.btnMostWonLost.Name = "btnMostWonLost";
-            this.btnMostWonLost.Size = new System.Drawing.Size(115, 35);
+            this.btnMostWonLost.Size = new System.Drawing.Size(124, 35);
             this.btnMostWonLost.TabIndex = 19;
             this.btnMostWonLost.Text = "Most Won/Lost";
             this.btnMostWonLost.UseVisualStyleBackColor = true;

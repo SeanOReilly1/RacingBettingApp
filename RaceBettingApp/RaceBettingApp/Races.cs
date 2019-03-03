@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RaceBettingApp
 {
-    class Races
+    public class Races
     {
         public string RaceName { get; set; }
 
@@ -15,5 +15,31 @@ namespace RaceBettingApp
         public decimal Length { get; set; }
 
         public bool Result { get; set; }
+
+        public Races()
+        {
+
+        }
+
+        public Races(string race, DateTime date, decimal length, bool result)
+        {
+            if (date > DateTime.Now)
+            {
+                throw new ArgumentOutOfRangeException();
+
+            }
+
+            else
+            {
+
+                RaceName = race;
+                Date = date;
+                Length = length;
+                Result = result;
+            }
+
+        }
+
     }
 }
+

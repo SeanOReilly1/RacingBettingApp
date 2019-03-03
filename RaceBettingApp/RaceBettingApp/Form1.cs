@@ -14,7 +14,7 @@ namespace RaceBettingApp
 {
     public partial class Form1 : Form
     {
-        string File = @"\\sec.local\Data\Homes\SO0393\My Documents\AdvancedProgramming\RaceBettingApp\New.txt";
+        string File = @"C:\AdvancedProgramming\RacingBettingApp\RaceBettingApp\New.bin";
         
         List<Races> ListOfRaces;
         ListOfRaces HardCodedRaces;
@@ -39,32 +39,50 @@ namespace RaceBettingApp
                // {
                     using (StreamWriter sw = new StreamWriter(File,append:true))
                     {
+                string date = dtpDate.Text;
+                string race = txtRaceCourse.Text;
+                int length = int.Parse(txtLenght.Text);
 
-                      /*  try
-                        {
+                if (DateTime.Parse(date) > DateTime.Now)
+                {
+                    MessageBox.Show("The date entered is in the future, please enter a valid date");
+                }
 
-                        ListOfRaces.Add(new Races
-                            {
-                                RaceName = txtRaceCourse.Text, Date = DateTime.Parse(dtpDate.Text), Length = decimal.Parse(txtLenght.Text),
-                                Result = chkWinner.Checked});
-                          
-                        }
-                        catch (Exception ex)
-                        {
-                        MessageBox.Show("Nothing in file");
-                        }*/
+                else if (race == "")
+                {
+                    MessageBox.Show("You must enter a race name");
+                }
 
-                        //foreach (var race in ListOfRaces)
-                        //{
+                else if (length <= 0)
+                {
+                    MessageBox.Show("Amount bet must be higher tahn 0 and cannot be nagative");
+                }
+                /*  try
+                  {
 
-                     
-                        sw.WriteLine(string.Format("{0}, {1}, {2}, {3}", txtRaceCourse.Text, DateTime.Parse(dtpDate.Text), txtLenght.Text, chkWinner.Checked));
+                  ListOfRaces.Add(new Races
+                      {
+                          RaceName = txtRaceCourse.Text, Date = DateTime.Parse(dtpDate.Text), Length = decimal.Parse(txtLenght.Text),
+                          Result = chkWinner.Checked});
 
-                   // }
+                  }
+                  catch (Exception ex)
+                  {
+                  MessageBox.Show("Nothing in file");
+                  }*/
+
+                //foreach (var race in ListOfRaces)
+                //{
+
+                else
+                {
+                    sw.WriteLine(string.Format("{0}, {1}, {2}, {3}", txtRaceCourse.Text, DateTime.Parse(dtpDate.Text), txtLenght.Text, chkWinner.Checked));
+
+                    // }
 
                     MessageBox.Show($"Bet added to location : {File} Successfully");
 
-
+                }
 
                     
 
@@ -141,7 +159,7 @@ namespace RaceBettingApp
             
             var winners = ListOfRaces.Where(race => race.Result == true).Count();
             var winning = (decimal)winners/ListOfRaces.Count();
-            var percentage = winning * 100;
+            var percentage = Math.Round(winning * 100, 4);
 
             rtbRead.AppendText($"The total number of races tipped is {ListOfRaces.Count()}." + Environment.NewLine);
             rtbRead.AppendText($"The total number of wins for races tipped is {winners}." + Environment.NewLine);
@@ -245,6 +263,7 @@ namespace RaceBettingApp
 
         private void btnMostWonLost_Click(object sender, EventArgs e)
         {
+            rtbRead.Clear();
             var MostMoneyWon = ListOfRaces
                                      .Where(race => race.Result == true).OrderByDescending(l => l.Length)
                                      .Select(r => r.RaceName).First();
@@ -253,8 +272,8 @@ namespace RaceBettingApp
                             .Where(race => race.Result == false).OrderByDescending(l => l.Length)
                             .Select(r => r.RaceName).First();
 
-            rtbRead.AppendText($"Most money won was at {MostMoneyWon}");
-            rtbRead.AppendText($"Most money lost was at{MostMoneyLost}");
+            rtbRead.AppendText($"Most money won was at {MostMoneyWon}" + Environment.NewLine);
+            rtbRead.AppendText($"Most money lost was at{MostMoneyLost}" + Environment.NewLine);
 
         }
     }
