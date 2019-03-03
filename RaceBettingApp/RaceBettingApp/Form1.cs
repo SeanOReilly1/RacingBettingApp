@@ -41,7 +41,9 @@ namespace RaceBettingApp
                     {
                 string date = dtpDate.Text;
                 string race = txtRaceCourse.Text;
+                string stringLenght = txtLenght.Text;
                 int length = int.Parse(txtLenght.Text);
+                
 
                 if (DateTime.Parse(date) > DateTime.Now)
                 {
@@ -56,6 +58,11 @@ namespace RaceBettingApp
                 else if (length <= 0)
                 {
                     MessageBox.Show("Amount bet must be higher tahn 0 and cannot be nagative");
+                }
+
+                else if (stringLenght == "")
+                {
+                    MessageBox.Show("You must enter an amount placed");
                 }
                 /*  try
                   {

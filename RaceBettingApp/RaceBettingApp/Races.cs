@@ -16,30 +16,10 @@ namespace RaceBettingApp
 
         public bool Result { get; set; }
 
-        public Races()
-        {
+   
 
-        }
+     }
 
-        public Races(string race, DateTime date, decimal length, bool result)
-        {
-            if (date > DateTime.Now)
-            {
-                throw new ArgumentOutOfRangeException();
-
-            }
-
-            else
-            {
-
-                RaceName = race;
-                Date = date;
-                Length = length;
-                Result = result;
-            }
-
-        }
-
-    }
 }
+
 
